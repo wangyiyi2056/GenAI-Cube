@@ -20,12 +20,12 @@ export class CubeSolver {
     const orderedFaces = new Array(6).fill('');
     const faceOrder = ['U', 'R', 'F', 'D', 'L', 'B'];
 
-    faces.forEach((face, index) => {
+    faces.forEach((face) => {
       const sortedSquares = this.sortSquaresByPosition(face);
-      const notation = sortedSquares.map(square => 
+      const notation = sortedSquares.map(square =>
         this.COLOR_MAPPING[square.color as keyof typeof this.COLOR_MAPPING]
       ).join('');
-      
+
       const centerColor = sortedSquares[4].color;
       const facePosition = faceOrder.indexOf(this.COLOR_MAPPING[centerColor as keyof typeof this.COLOR_MAPPING]);
       orderedFaces[facePosition] = notation;
@@ -44,7 +44,7 @@ export class CubeSolver {
     });
   }
 
-  static async solve(cubeState: string): Promise<string[]> {
+  static async solve(_cubeState: string): Promise<string[]> {
     try {
       // Generate a random scramble and reverse it for now
       // In a real implementation, this would use a proper solving algorithm

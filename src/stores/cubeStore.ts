@@ -9,6 +9,7 @@ interface CubeState {
   faceColors: ColorSquare[][];
   cubeState: string;
   solution: string[];
+  currentMove: string | null;
 }
 
 export const useCubeStore = defineStore('cube', {
@@ -19,6 +20,7 @@ export const useCubeStore = defineStore('cube', {
     faceColors: [],
     cubeState: '',
     solution: [],
+    currentMove: null,
   }),
   
   actions: {
@@ -47,6 +49,9 @@ export const useCubeStore = defineStore('cube', {
     },
     setCubeState(state: string) {
       this.cubeState = state;
+    },
+    setCurrentMove(move: string | null) {
+      this.currentMove = move;
     },
   },
 });

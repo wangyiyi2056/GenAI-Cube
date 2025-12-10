@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/stores/cubeStore.ts","./src/utils/cubeSolver.ts","./src/utils/imageProcessor.ts","./src/App.vue","./src/components/CubeScanner.vue","./src/components/CubeSolver.vue","./src/components/HelloWorld.vue","./src/components/RubiksCube.vue"],"version":"5.8.3"}
