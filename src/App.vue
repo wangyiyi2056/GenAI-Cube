@@ -1,47 +1,58 @@
 <script setup lang="ts">
-  import RubiksCube from "./components/RubiksCube.vue";
-  import CubeScanner from "./components/CubeScanner.vue";
   import CubeSolver from "./components/CubeSolver.vue";
 </script>
 
 <template>
   <div class="app-container">
-    <el-tabs type="border-card">
-      <el-tab-pane label="3D Cube">
-        <RubiksCube />
-      </el-tab-pane>
-      <el-tab-pane label="Cube Scanner">
-        <CubeScanner />
-      </el-tab-pane>
-      <el-tab-pane label="Solver">
-        <CubeSolver />
-      </el-tab-pane>
-      <el-tab-pane label="examples">
-        <div>
-          <a href="https://www.cubing.net/">https://www.cubing.net/</a>
-        </div>
-        <div>
-          <a href="https://rubiks-cube-solver.com/zh/">
-            https://rubiks-cube-solver.com/zh/
-          </a>
-        </div>
-        <div>
-          <a href="https://rubikscu.be/">https://rubikscu.be/</a>
-        </div>
-      </el-tab-pane>
-    </el-tabs>
+    <CubeSolver />
   </div>
 </template>
 
 <style>
   .app-container {
     width: 100%;
-    min-height: 100vh;
-    padding: 20px;
+    background: #fff;
+    height: 100vh;
     box-sizing: border-box;
   }
 
   .el-tabs {
     background: white;
+  }
+
+  .practice-hint {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .practice-hint h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+
+  .practice-hint p {
+    margin: 5px 0;
+    color: #666;
+  }
+
+  .examples-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .examples-list a {
+    color: #409eff;
+    text-decoration: none;
+  }
+
+  .examples-list a:hover {
+    text-decoration: underline;
   }
 </style>
